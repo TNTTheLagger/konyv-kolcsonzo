@@ -16,7 +16,8 @@ Route::delete('books/{id}', [BookController::class, 'destroy'])->name('books.des
 Route::get('books/book/{bookId}', [RentalController::class, 'create'])->name('rentals.create');
 Route::post('rentals', [RentalController::class, 'store'])->name('rentals.store');
 Route::get('rentals', [RentalController::class, 'index'])->name('rentals.index');
-Route::get('back', [RentalController::class, 'active'])->name('rentals.active');
-Route::patch('rentals/{id}/return', [RentalController::class, 'updateReturnDate'])->name('rentals.updateReturnDate');
 
-Route::get('/', [BookController::class, 'main'])->name('main');
+Route::get('back', [RentalController::class, 'active'])->name('rentals.active');
+Route::patch('rentals/updateReturnDate', [RentalController::class, 'updateReturnDate'])->name('rentals.updateReturnDate');
+
+Route::get('/', [BookController::class, 'index'])->name('home');
